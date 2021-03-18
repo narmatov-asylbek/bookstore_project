@@ -1,10 +1,10 @@
 {% extends '_base.html' %}
-
+{% load static %}
 {% block title %}Home{% endblock title %}
 
 {% block content %}
 <h1>Homepage</h1>
-
+    <img class="book-cover" src="{% static 'images/django.jpg' %}" alt="">
     {% if user.is_authenticated %}
         <p>Welcome {{ user.email }}</p>
         <a href="{% url 'logout' %}">Logout</a>
@@ -15,5 +15,6 @@
 
     {% endif %}
 
+    <script src="{% static 'js/base.js' %}"></script>
 {% endblock content %}
 

@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+.book-cover {
+    height: 450px;
+    width: 300px;
+}
+
+.about-wrapper {
+    max-width: 770px;
+    margin: auto;
+}
+
+.about-wrapper h1 {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    font-weight: 700;
+    font-size: 3rem;
+}
