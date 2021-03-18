@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'django.contrib.admin',
+    'django.contrib.sites',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -40,6 +41,8 @@ INSTALLED_APPS = [
 
     # 3rd party applications
     'crispy_forms',
+    'allauth',
+    'allauth.account',
 
     #  Local apps
     'users.apps.UsersConfig',
@@ -137,13 +140,27 @@ STATICFILES_FINDERS = [
 ]
 
 # Defining which model to use to auth
-
 AUTH_USER_MODEL = 'users.CustomUser'
 
 # User auth redirections
 LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'home'
+ACCOUNT_LOGOUT_REDIRECT = 'home'
 
 # Crispy Template Pack
-
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# allauth config
+ACCOUNT_SESSION_REMEMBER = True
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
+
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATHION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQE_EMAIL = True
+
+SITE_ID = 1
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend', # new
+)
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
