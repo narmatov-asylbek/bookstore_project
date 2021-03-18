@@ -164,3 +164,6 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend', # new
 )
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Email configuration
+DEFAULT_FROM_EMAIL = 'admin@bookstore.com'
