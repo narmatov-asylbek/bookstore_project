@@ -3,6 +3,9 @@ version: '3.8'
 services:
   web:
     build: .
+    environment: 
+      - SECRET_KEY=_i-2v-8g9_yb!+leav%i1akwr^wy$$z3rx_oxu3k=if&=sw0uag
+      - DEBUG=1
     command: python /code/manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/code
