@@ -4,6 +4,7 @@ services:
   web:
     build: .
     environment: 
+      - ENVIRONMENT=development
       - SECRET_KEY=_i-2v-8g9_yb!+leav%i1akwr^wy$$z3rx_oxu3k=if&=sw0uag
       - DEBUG=1
       - STRIPE_TEST_PUBLISHABLE_KEY=pk_test_51IWfjNHuxwp2bxi1tE0yf9A97AeCkh1QzjOSa9KGQOZelKkBU2is8et0LskIGEvhL45pC3yyEtCyxi6ocQZEvpx600jObsgXWy
