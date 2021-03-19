@@ -6,6 +6,9 @@ services:
     environment: 
       - SECRET_KEY=_i-2v-8g9_yb!+leav%i1akwr^wy$$z3rx_oxu3k=if&=sw0uag
       - DEBUG=1
+      - STRIPE_TEST_PUBLISHABLE_KEY=pk_test_51IWfjNHuxwp2bxi1tE0yf9A97AeCkh1QzjOSa9KGQOZelKkBU2is8et0LskIGEvhL45pC3yyEtCyxi6ocQZEvpx600jObsgXWy
+      - STRIPE_TEST_SECRET_KEY=sk_test_51IWfjNHuxwp2bxi1HZda5MwJDlmgJjeWjAa4erS1XHjVSyNd5mRR6oHcL5pTObjdqRXeCumrEjehPkrbBFw8Ytb200WXbxKoH6
+
     command: python /code/manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/code

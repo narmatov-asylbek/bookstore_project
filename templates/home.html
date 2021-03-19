@@ -3,7 +3,10 @@
 {% block title %}Home{% endblock title %}
 
 {% block content %}
-<h1>Homepage</h1>
+    {% if not perms.books.special_status %}
+    <a href="{% url 'orders' %}" class="btn btn-success" >Purchase All Books</a>
+    {%endif%}
+    <h1>Homepage</h1>
     <img class="book-cover" src="{% static 'images/django.jpg' %}" alt="">
     {% if user.is_authenticated %}
         <p>Welcome {{ user.email }}</p>
