@@ -7,7 +7,6 @@
     <a href="{% url 'orders' %}" class="btn btn-success" >Purchase All Books</a>
     {%endif%}
     <h1>Homepage</h1>
-    <img class="book-cover" src="{% static 'images/django.jpg' %}" alt="">
     {% if user.is_authenticated %}
         <p>Welcome {{ user.email }}</p>
         <a href="{% url 'account_logout' %}">Logout</a>
@@ -17,6 +16,11 @@
         <a href="{% url 'account_signup' %}">Signup</a>
 
     {% endif %}
+    <form class="form-inline mt-2 mt-md-0" action="{% url 'search_results' %}"
+    method="get">
+        <input name="q" class="form-control mr-sm-2" type="text" placeholder="Search"
+        aria-label="Search">
+    </form>
 
     <script src="{% static 'js/base.js' %}"></script>
 {% endblock content %}

@@ -1,0 +1,15 @@
+{% extends '_base.html' %}
+
+{% block title %}Books{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="text-center mb-5">Search results</h1>
+        {% for book in book_list %}
+            <div class="book-item text-center">
+                <h3><a href="{{ book.get_absolute_url }}">{{book.title}}</a></h3>
+            </div>
+        {% endfor %}
+        <a href="{% url 'home' %}" class="btn btn-primary mt-5">Return to mainpage</a>
+    </div>
+{% endblock content %}
